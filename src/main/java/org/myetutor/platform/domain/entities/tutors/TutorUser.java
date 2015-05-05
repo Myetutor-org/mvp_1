@@ -13,8 +13,8 @@ import java.util.List;
  */
 @Entity
 @Table(name="tutor_user")
-@NamedQuery(name="User.findAll", query="SELECT u FROM User u")
-public class User implements Serializable {
+@NamedQuery(name="TutorUser.findAll", query="SELECT u FROM TutorUser u")
+public class TutorUser implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	public static final String USER = "user";
@@ -33,9 +33,9 @@ public class User implements Serializable {
 
 	//bi-directional many-to-one association to Useranswer
 	@OneToMany(mappedBy="user")
-	private List<Useranswer> useranswers;
+	private List<TutorUseranswer> useranswers;
 
-	public User() {
+	public TutorUser() {
 	}
 
 	public int getUserID() {
@@ -78,22 +78,22 @@ public class User implements Serializable {
 		this.userTelNo = userTelNo;
 	}
 
-	public List<Useranswer> getUseranswers() {
+	public List<TutorUseranswer> getUseranswers() {
 		return this.useranswers;
 	}
 
-	public void setUseranswers(List<Useranswer> useranswers) {
+	public void setUseranswers(List<TutorUseranswer> useranswers) {
 		this.useranswers = useranswers;
 	}
 
-	public Useranswer addUseranswer(Useranswer useranswer) {
+	public TutorUseranswer addUseranswer(TutorUseranswer useranswer) {
 		getUseranswers().add(useranswer);
 		useranswer.setUser(this);
 
 		return useranswer;
 	}
 
-	public Useranswer removeUseranswer(Useranswer useranswer) {
+	public TutorUseranswer removeUseranswer(TutorUseranswer useranswer) {
 		getUseranswers().remove(useranswer);
 		useranswer.setUser(null);
 

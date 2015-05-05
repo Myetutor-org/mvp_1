@@ -39,7 +39,7 @@ CREATE TABLE `question` (
   PRIMARY KEY (`id`),
   KEY `fk_question_question_section1_idx` (`question_section_id`),
   CONSTRAINT `fk_question_question_section1` FOREIGN KEY (`question_section_id`) REFERENCES `question_section` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -48,6 +48,7 @@ CREATE TABLE `question` (
 
 LOCK TABLES `question` WRITE;
 /*!40000 ALTER TABLE `question` DISABLE KEYS */;
+INSERT INTO `question` VALUES (1,'Τα 3/5 της τιμής μιας μπλούζας είναι 60 ευρώ, πόσο κάνει η μπλούζα?','2015-05-06 00:00:00',NULL,NULL,1,-2,1,0,'2',1);
 /*!40000 ALTER TABLE `question` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -88,11 +89,11 @@ DROP TABLE IF EXISTS `question_section`;
 CREATE TABLE `question_section` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `title` varchar(45) DEFAULT NULL,
-  `question_subject_id` int(11) NOT NULL,
+  `question_subject_id` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_question_section_question_subject1_idx` (`question_subject_id`),
   CONSTRAINT `fk_question_section_question_subject1` FOREIGN KEY (`question_subject_id`) REFERENCES `question_subject` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -101,6 +102,7 @@ CREATE TABLE `question_section` (
 
 LOCK TABLES `question_section` WRITE;
 /*!40000 ALTER TABLE `question_section` DISABLE KEYS */;
+INSERT INTO `question_section` VALUES (1,'Chapter 1',NULL);
 /*!40000 ALTER TABLE `question_section` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -433,4 +435,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-05-05 22:39:57
+-- Dump completed on 2015-05-06  0:27:28

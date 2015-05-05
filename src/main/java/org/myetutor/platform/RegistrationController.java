@@ -3,8 +3,8 @@ package org.myetutor.platform;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
-import org.myetutor.platform.domain.entities.tutors.Question;
-import org.myetutor.platform.domain.entities.tutors.User;
+import org.myetutor.platform.domain.entities.tutors.TutorQuestion;
+import org.myetutor.platform.domain.entities.tutors.TutorUser;
 import org.myetutor.platform.domain.repositories.user.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 
 @Controller
 @RequestMapping(value = "/register")
-@SessionAttributes(value = {User.USER, Question.QUESTION})
+@SessionAttributes(value = {TutorUser.USER, TutorQuestion.QUESTION})
 public class RegistrationController {
 
 	@Inject
@@ -23,24 +23,24 @@ public class RegistrationController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewRegistration(Model model) {
-		User userForm = new User();
+		TutorUser userForm = new TutorUser();
 		model.addAttribute("userForm", userForm);
 		return "registration";
 	}
 
 	@RequestMapping(method = RequestMethod.POST)
-	public String processRegistration(@ModelAttribute("userForm") User user,
+	public String processRegistration(@ModelAttribute("userForm") TutorUser user,
 			Model model, HttpServletRequest request) {
 		try {
 			userRepository.save(user);
-			model.addAttribute(User.USER, user);
+			model.addAttribute(TutorUser.USER, user);
 			model.addAttribute("divWelcomeVisibility", "block");
 			model.addAttribute("divNotificationVisibility", "none");
 			model.addAttribute("userName", user.getUserName());
 			model.addAttribute("userSurname", user.getUserSurname());
-			Question question = new Question();
+			TutorQuestion question = new TutorQuestion();
 			question.setQuestionID(1);
-			model.addAttribute(Question.QUESTION, question);
+			model.addAttribute(TutorQuestion.QUESTION, question);
 			return "home";
 		} catch(Exception e) {
 			// TODO Better checking of duplicate user

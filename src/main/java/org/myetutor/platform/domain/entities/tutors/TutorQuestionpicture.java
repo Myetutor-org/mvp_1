@@ -11,8 +11,8 @@ import java.util.List;
  */
 @Entity
 @Table(name="tutor_questionpicture")
-@NamedQuery(name="Questionpicture.findAll", query="SELECT q FROM Questionpicture q")
-public class Questionpicture implements Serializable {
+@NamedQuery(name="TutorQuestionpicture.findAll", query="SELECT q FROM TutorQuestionpicture q")
+public class TutorQuestionpicture implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
@@ -32,9 +32,9 @@ public class Questionpicture implements Serializable {
 			@JoinColumn(name="questionID")
 			}
 		)
-	private List<Question> questions;
+	private List<TutorQuestion> questions;
 
-	public Questionpicture() {
+	public TutorQuestionpicture() {
 	}
 
 	public int getQuestionPictureID() {
@@ -53,11 +53,11 @@ public class Questionpicture implements Serializable {
 		this.questionPicturePath = questionPicturePath;
 	}
 
-	public List<Question> getQuestions() {
+	public List<TutorQuestion> getQuestions() {
 		return this.questions;
 	}
 
-	public void setQuestions(List<Question> questions) {
+	public void setQuestions(List<TutorQuestion> questions) {
 		this.questions = questions;
 	}
 

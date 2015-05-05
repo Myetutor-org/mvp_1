@@ -4,26 +4,27 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 /**
- * The primary key class for the answer database table.
+ * The primary key class for the useranswer database table.
  * 
  */
 @Embeddable
-public class AnswerPK implements Serializable {
+public class TutorUseranswerPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	private int answerID;
+	@Column(insertable=false, updatable=false)
+	private int userID;
 
 	@Column(insertable=false, updatable=false)
 	private int questionID;
 
-	public AnswerPK() {
+	public TutorUseranswerPK() {
 	}
-	public int getAnswerID() {
-		return this.answerID;
+	public int getUserID() {
+		return this.userID;
 	}
-	public void setAnswerID(int answerID) {
-		this.answerID = answerID;
+	public void setUserID(int userID) {
+		this.userID = userID;
 	}
 	public int getQuestionID() {
 		return this.questionID;
@@ -36,19 +37,19 @@ public class AnswerPK implements Serializable {
 		if (this == other) {
 			return true;
 		}
-		if (!(other instanceof AnswerPK)) {
+		if (!(other instanceof TutorUseranswerPK)) {
 			return false;
 		}
-		AnswerPK castOther = (AnswerPK)other;
+		TutorUseranswerPK castOther = (TutorUseranswerPK)other;
 		return 
-			(this.answerID == castOther.answerID)
+			(this.userID == castOther.userID)
 			&& (this.questionID == castOther.questionID);
 	}
 
 	public int hashCode() {
 		final int prime = 31;
 		int hash = 17;
-		hash = hash * prime + this.answerID;
+		hash = hash * prime + this.userID;
 		hash = hash * prime + this.questionID;
 		
 		return hash;

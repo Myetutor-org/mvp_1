@@ -3,12 +3,12 @@
 	xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
 	<persistence-unit name="MyETutor">
-		<class>org.myetutor.platform.domain.entities.tutors.Answer</class>
-		<class>org.myetutor.platform.domain.entities.tutors.AnswerPK</class>
-		<class>org.myetutor.platform.domain.entities.tutors.Question</class>
-		<class>org.myetutor.platform.domain.entities.tutors.Questionpicture</class>
-		<class>org.myetutor.platform.domain.entities.tutors.User</class>
-		<class>org.myetutor.platform.domain.entities.tutors.Useranswer</class>
-		<class>org.myetutor.platform.domain.entities.tutors.UseranswerPK</class>
+		<class>org.myetutor.platform.domain.entities.tutors.TutorAnswer</class>
+		<class>org.myetutor.platform.domain.entities.tutors.TutorAnswerPK</class>
+		<class>org.myetutor.platform.domain.entities.tutors.TutorQuestion</class>
+		<class>org.myetutor.platform.domain.entities.tutors.TutorQuestionpicture</class>
+		<class>org.myetutor.platform.domain.entities.tutors.TutorUser</class>
+		<class>org.myetutor.platform.domain.entities.tutors.TutorUseranswer</class>
+		<class>org.myetutor.platform.domain.entities.tutors.TutorUseranswerPK</class>
 	</persistence-unit>
 </persistence>

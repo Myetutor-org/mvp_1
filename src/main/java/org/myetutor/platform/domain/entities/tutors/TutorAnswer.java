@@ -10,28 +10,28 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="tutor_answer")
-@NamedQuery(name="Answer.findAll", query="SELECT a FROM Answer a")
-public class Answer implements Serializable {
+@NamedQuery(name="TutorAnswer.findAll", query="SELECT a FROM TutorAnswer a")
+public class TutorAnswer implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@EmbeddedId
-	private AnswerPK id;
+	private TutorAnswerPK id;
 
 	private String answerText;
 
 	//bi-directional many-to-one association to Question
 	@ManyToOne
 	@JoinColumn(name="questionID", insertable=false, updatable=false)
-	private Question question;
+	private TutorQuestion question;
 
-	public Answer() {
+	public TutorAnswer() {
 	}
 
-	public AnswerPK getId() {
+	public TutorAnswerPK getId() {
 		return this.id;
 	}
 
-	public void setId(AnswerPK id) {
+	public void setId(TutorAnswerPK id) {
 		this.id = id;
 	}
 
@@ -43,11 +43,11 @@ public class Answer implements Serializable {
 		this.answerText = answerText;
 	}
 
-	public Question getQuestion() {
+	public TutorQuestion getQuestion() {
 		return this.question;
 	}
 
-	public void setQuestion(Question question) {
+	public void setQuestion(TutorQuestion question) {
 		this.question = question;
 	}
 

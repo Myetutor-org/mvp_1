@@ -2,10 +2,10 @@ package org.myetutor.platform;
 
 import javax.inject.Inject;
 
-import org.myetutor.platform.domain.entities.tutors.Question;
-import org.myetutor.platform.domain.entities.tutors.User;
-import org.myetutor.platform.domain.entities.tutors.Useranswer;
-import org.myetutor.platform.domain.entities.tutors.UseranswerPK;
+import org.myetutor.platform.domain.entities.tutors.TutorQuestion;
+import org.myetutor.platform.domain.entities.tutors.TutorUser;
+import org.myetutor.platform.domain.entities.tutors.TutorUseranswer;
+import org.myetutor.platform.domain.entities.tutors.TutorUseranswerPK;
 import org.myetutor.platform.domain.repositories.question.QuestionRepository;
 import org.myetutor.platform.domain.repositories.user.answer.UserAnswerRepository;
 import org.slf4j.Logger;
@@ -22,7 +22,7 @@ import org.springframework.web.servlet.ModelAndView;
  * Handles requests for the application home page.
  */
 @Controller
-@SessionAttributes(value = { Question.QUESTION, User.USER, "newUserAnswer"})
+@SessionAttributes(value = { TutorQuestion.QUESTION, TutorUser.USER, "newUserAnswer"})
 @RequestMapping(value = "/questions")
 public class QuestionsController {
 
@@ -35,12 +35,12 @@ public class QuestionsController {
 
 	@RequestMapping(method = RequestMethod.GET)
 	public String get(
-			@ModelAttribute(value = Question.QUESTION) Question question,
-			@ModelAttribute(value = User.USER) User user,
+			@ModelAttribute(value = TutorQuestion.QUESTION) TutorQuestion question,
+			@ModelAttribute(value = TutorUser.USER) TutorUser user,
 			Model model) {
-		Useranswer useranswer = new Useranswer();
+		TutorUseranswer useranswer = new TutorUseranswer();
 		model.addAttribute("newUserAnswer", useranswer);
-		Question newQuestion = questionRepository.findByQuestionID(question
+		TutorQuestion newQuestion = questionRepository.findByQuestionID(question
 				.getQuestionID());
 		model.addAttribute("questionID", newQuestion.getQuestionID());
 		model.addAttribute("questionText", newQuestion.getQuestionText());
@@ -51,19 +51,19 @@ public class QuestionsController {
 
 	@RequestMapping(method = RequestMethod.POST)
 	public ModelAndView post(
-			@ModelAttribute(value = Question.QUESTION) Question question,
-			@ModelAttribute("newUserAnswer") Useranswer useranswer,
-			@ModelAttribute(value = User.USER) User user, Model model) {
-		useranswer.setId(new UseranswerPK());
+			@ModelAttribute(value = TutorQuestion.QUESTION) TutorQuestion question,
+			@ModelAttribute("newUserAnswer") TutorUseranswer useranswer,
+			@ModelAttribute(value = TutorUser.USER) TutorUser user, Model model) {
+		useranswer.setId(new TutorUseranswerPK());
 		useranswer.setUser(user);
 		useranswer.setQuestion(question);
 		userAnswerRepository.save(useranswer);
-		Question newQuestion = questionRepository.findByQuestionID(question
+		TutorQuestion newQuestion = questionRepository.findByQuestionID(question
 				.getQuestionID() + 1);
 		if (newQuestion == null)
 			return new ModelAndView("redirect:done");
-		model.addAttribute(Question.QUESTION, newQuestion);
-		model.addAttribute(User.USER, user);
+		model.addAttribute(TutorQuestion.QUESTION, newQuestion);
+		model.addAttribute(TutorUser.USER, user);
 		model.addAttribute("newUserAnswer", useranswer);
 		return new ModelAndView("redirect:questions");
 	}

@@ -13,8 +13,8 @@ import java.util.List;
  */
 @Entity
 @Table(name="tutor_question")
-@NamedQuery(name="Question.findAll", query="SELECT q FROM Question q")
-public class Question implements Serializable {
+@NamedQuery(name="TutorQuestion.findAll", query="SELECT q FROM TutorQuestion q")
+public class TutorQuestion implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	public static final String QUESTION = "question";
@@ -31,17 +31,17 @@ public class Question implements Serializable {
 
 	//bi-directional many-to-one association to Answer
 	@OneToMany(mappedBy="question")
-	private List<Answer> answers;
+	private List<TutorAnswer> answers;
 
 	//bi-directional many-to-many association to Questionpicture
 	@ManyToMany(mappedBy="questions")
-	private List<Questionpicture> questionpictures;
+	private List<TutorQuestionpicture> questionpictures;
 
 	//bi-directional many-to-one association to Useranswer
 	@OneToMany(mappedBy="question")
-	private List<Useranswer> useranswers;
+	private List<TutorUseranswer> useranswers;
 
-	public Question() {
+	public TutorQuestion() {
 	}
 
 	public int getQuestionID() {
@@ -76,52 +76,52 @@ public class Question implements Serializable {
 		this.questionWeight = questionWeight;
 	}
 
-	public List<Answer> getAnswers() {
+	public List<TutorAnswer> getAnswers() {
 		return this.answers;
 	}
 
-	public void setAnswers(List<Answer> answers) {
+	public void setAnswers(List<TutorAnswer> answers) {
 		this.answers = answers;
 	}
 
-	public Answer addAnswer(Answer answer) {
+	public TutorAnswer addAnswer(TutorAnswer answer) {
 		getAnswers().add(answer);
 		answer.setQuestion(this);
 
 		return answer;
 	}
 
-	public Answer removeAnswer(Answer answer) {
+	public TutorAnswer removeAnswer(TutorAnswer answer) {
 		getAnswers().remove(answer);
 		answer.setQuestion(null);
 
 		return answer;
 	}
 
-	public List<Questionpicture> getQuestionpictures() {
+	public List<TutorQuestionpicture> getQuestionpictures() {
 		return this.questionpictures;
 	}
 
-	public void setQuestionpictures(List<Questionpicture> questionpictures) {
+	public void setQuestionpictures(List<TutorQuestionpicture> questionpictures) {
 		this.questionpictures = questionpictures;
 	}
 
-	public List<Useranswer> getUseranswers() {
+	public List<TutorUseranswer> getUseranswers() {
 		return this.useranswers;
 	}
 
-	public void setUseranswers(List<Useranswer> useranswers) {
+	public void setUseranswers(List<TutorUseranswer> useranswers) {
 		this.useranswers = useranswers;
 	}
 
-	public Useranswer addUseranswer(Useranswer useranswer) {
+	public TutorUseranswer addUseranswer(TutorUseranswer useranswer) {
 		getUseranswers().add(useranswer);
 		useranswer.setQuestion(this);
 
 		return useranswer;
 	}
 
-	public Useranswer removeUseranswer(Useranswer useranswer) {
+	public TutorUseranswer removeUseranswer(TutorUseranswer useranswer) {
 		getUseranswers().remove(useranswer);
 		useranswer.setQuestion(null);
 
