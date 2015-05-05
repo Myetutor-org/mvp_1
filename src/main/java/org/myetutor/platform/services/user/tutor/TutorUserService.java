@@ -1,10 +1,10 @@
-package org.myetutor.platform.services.user;
+package org.myetutor.platform.services.user.tutor;
 
 import java.util.List;
 
 import org.myetutor.platform.domain.entities.tutors.TutorUser;
 
-public interface UserService {
+public interface TutorUserService {
 	/**
      * Creates a new user.
      * @param created   The information of the created user.
@@ -16,9 +16,9 @@ public interface UserService {
      * Deletes a user.
      * @param userId  The id of the deleted user.
      * @return  The deleted user.
-     * @throws UserNotFoundException  if no user is found with the given id.
+     * @throws TutorUserNotFoundException  if no user is found with the given id.
      */
-    public TutorUser delete(Long userId) throws UserNotFoundException;
+    public TutorUser delete(Long userId) throws TutorUserNotFoundException;
  
     /**
      * Finds all users.
@@ -37,7 +37,7 @@ public interface UserService {
      * Updates the information of a user.
      * @param updated   The information of the updated user.
      * @return  The updated user.
-     * @throws UserNotFoundException  if no user is found with given id.
+     * @throws TutorUserNotFoundException  if no user is found with given id.
      */
-    public TutorUser update(TutorUser updated) throws UserNotFoundException;
+    public TutorUser update(TutorUser updated) throws TutorUserNotFoundException;
 }
