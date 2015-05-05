@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @Controller
 @RequestMapping(value = "/register")
 @SessionAttributes(value = {TutorUser.USER, TutorQuestion.QUESTION})
-public class RegistrationController {
+public class TutorRegistrationController {
 
 	@Inject
 	private UserRepository userRepository;
