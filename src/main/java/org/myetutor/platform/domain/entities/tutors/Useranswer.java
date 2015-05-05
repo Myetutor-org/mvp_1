@@ -1,4 +1,4 @@
-package org.myetutor.platform.domain.entities;
+package org.myetutor.platform.domain.entities.tutors;
 
 import java.io.Serializable;
 

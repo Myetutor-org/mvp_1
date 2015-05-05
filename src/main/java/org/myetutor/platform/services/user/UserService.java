@@ -2,7 +2,7 @@ package org.myetutor.platform.services.user;
 
 import java.util.List;
 
-import org.myetutor.platform.domain.entities.User;
+import org.myetutor.platform.domain.entities.tutors.User;
 
 public interface UserService {
 	/**

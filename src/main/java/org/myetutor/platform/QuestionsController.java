@@ -2,10 +2,10 @@ package org.myetutor.platform;
 
 import javax.inject.Inject;
 
-import org.myetutor.platform.domain.entities.Question;
-import org.myetutor.platform.domain.entities.User;
-import org.myetutor.platform.domain.entities.Useranswer;
-import org.myetutor.platform.domain.entities.UseranswerPK;
+import org.myetutor.platform.domain.entities.tutors.Question;
+import org.myetutor.platform.domain.entities.tutors.User;
+import org.myetutor.platform.domain.entities.tutors.Useranswer;
+import org.myetutor.platform.domain.entities.tutors.UseranswerPK;
 import org.myetutor.platform.domain.repositories.question.QuestionRepository;
 import org.myetutor.platform.domain.repositories.user.answer.UserAnswerRepository;
 import org.slf4j.Logger;

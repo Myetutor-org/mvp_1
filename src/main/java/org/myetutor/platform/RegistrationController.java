@@ -3,8 +3,8 @@ package org.myetutor.platform;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
-import org.myetutor.platform.domain.entities.Question;
-import org.myetutor.platform.domain.entities.User;
+import org.myetutor.platform.domain.entities.tutors.Question;
+import org.myetutor.platform.domain.entities.tutors.User;
 import org.myetutor.platform.domain.repositories.user.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
