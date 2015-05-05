@@ -2,12 +2,12 @@ package org.myetutor.platform;
 
 import javax.inject.Inject;
 
-import org.myetutor.platform.model.Question;
-import org.myetutor.platform.model.User;
-import org.myetutor.platform.model.Useranswer;
-import org.myetutor.platform.model.UseranswerPK;
-import org.myetutor.platform.repository.question.QuestionRepository;
-import org.myetutor.platform.repository.user.answer.UserAnswerRepository;
+import org.myetutor.platform.domain.entities.Question;
+import org.myetutor.platform.domain.entities.User;
+import org.myetutor.platform.domain.entities.Useranswer;
+import org.myetutor.platform.domain.entities.UseranswerPK;
+import org.myetutor.platform.domain.repositories.question.QuestionRepository;
+import org.myetutor.platform.domain.repositories.user.answer.UserAnswerRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;

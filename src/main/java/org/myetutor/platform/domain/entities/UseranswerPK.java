@@ -1,4 +1,4 @@
-package org.myetutor.platform.model;
+package org.myetutor.platform.domain.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;

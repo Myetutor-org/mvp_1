@@ -1,4 +1,4 @@
-package org.myetutor.platform.model;
+package org.myetutor.platform.domain.entities;
 
 import java.io.Serializable;
 
@@ -12,7 +12,7 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="question")
+@Table(name="tutor_question")
 @NamedQuery(name="Question.findAll", query="SELECT q FROM Question q")
 public class Question implements Serializable {
 	private static final long serialVersionUID = 1L;

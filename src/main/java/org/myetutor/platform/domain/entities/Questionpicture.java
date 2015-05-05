@@ -1,4 +1,4 @@
-package org.myetutor.platform.model;
+package org.myetutor.platform.domain.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -10,7 +10,7 @@ import java.util.List;
  * 
  */
 @Entity
-@Table(name="questionpicture")
+@Table(name="tutor_questionpicture")
 @NamedQuery(name="Questionpicture.findAll", query="SELECT q FROM Questionpicture q")
 public class Questionpicture implements Serializable {
 	private static final long serialVersionUID = 1L;
@@ -24,7 +24,7 @@ public class Questionpicture implements Serializable {
 	//bi-directional many-to-many association to Question
 	@ManyToMany
 	@JoinTable(
-		name="question_has_questionpicture"
+		name="tutor_question_has_questionpicture"
 		, joinColumns={
 			@JoinColumn(name="questionPictureID")
 			}

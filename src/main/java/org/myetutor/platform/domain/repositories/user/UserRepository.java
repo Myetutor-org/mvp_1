@@ -1,6 +1,6 @@
-package org.myetutor.platform.repository.user;
+package org.myetutor.platform.domain.repositories.user;
 
-import org.myetutor.platform.model.User;
+import org.myetutor.platform.domain.entities.User;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

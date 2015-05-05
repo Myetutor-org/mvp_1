@@ -1,8 +1,8 @@
-package org.myetutor.platform.repository.question;
+package org.myetutor.platform.domain.repositories.question;
 
 import java.util.List;
 
-import org.myetutor.platform.model.Question;
+import org.myetutor.platform.domain.entities.Question;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 

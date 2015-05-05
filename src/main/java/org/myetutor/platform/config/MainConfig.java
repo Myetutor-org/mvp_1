@@ -21,7 +21,7 @@ import org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean;
 @ComponentScan(basePackages = "org.myetutor.platform", 
 excludeFilters = { @Filter(Configuration.class) })
 @PropertySource("classpath:application.properties")
-@EnableJpaRepositories("org.myetutor.platform.repository")
+@EnableJpaRepositories("org.myetutor.platform.domain.repositories")
 public class MainConfig {
 	
 	@Inject

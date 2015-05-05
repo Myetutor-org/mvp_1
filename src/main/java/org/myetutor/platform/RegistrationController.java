@@ -3,9 +3,9 @@ package org.myetutor.platform;
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 
-import org.myetutor.platform.model.Question;
-import org.myetutor.platform.model.User;
-import org.myetutor.platform.repository.user.UserRepository;
+import org.myetutor.platform.domain.entities.Question;
+import org.myetutor.platform.domain.entities.User;
+import org.myetutor.platform.domain.repositories.user.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;

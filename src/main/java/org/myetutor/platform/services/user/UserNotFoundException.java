@@ -1,4 +1,4 @@
-package org.myetutor.platform.service.user;
+package org.myetutor.platform.services.user;
 
 
 public class UserNotFoundException extends Exception {

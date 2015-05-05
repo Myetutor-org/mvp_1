@@ -1,7 +1,7 @@
-package org.myetutor.platform.repository.user.answer;
+package org.myetutor.platform.domain.repositories.user.answer;
 
-import org.myetutor.platform.model.Useranswer;
-import org.myetutor.platform.model.UseranswerPK;
+import org.myetutor.platform.domain.entities.Useranswer;
+import org.myetutor.platform.domain.entities.UseranswerPK;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
