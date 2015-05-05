@@ -9,7 +9,7 @@
 <body>
 	<h1>Welcome to the MyeTutor</h1>
 	<div id="form">
-		<P>Please note that this is an alpha version of the evaluation
+		<P>Please note that this is an pre-alpha version of the evaluation
 			form of the myetutor.org platform.</P>
 		<form:form modelAttribute="userForm" method="POST" action="register"> 
 			<div id="name">Name:<form:input path="userName" /></div>

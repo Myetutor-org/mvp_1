@@ -28,4 +28,10 @@ public class HomeController {
 		logger.info("Done with the test!");
 		return "done";
 	}
+	
+	@RequestMapping(value = "/lp", method = RequestMethod.GET)
+	public String lp(Model model) {
+		logger.info("Learner profile");
+		return "learnerprofile";
+	}
 }
